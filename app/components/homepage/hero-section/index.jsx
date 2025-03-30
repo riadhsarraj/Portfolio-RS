@@ -24,11 +24,7 @@ function HeroSection() {
         <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
           <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             Hello, <br />
-            I'm {' '}
-            <span className=" text-pink-500">{personalData.name}</span>
-            {` , I'm a  `}
-            <span className=" text-[#16f2b3]">{personalData.designation}</span>
-            .
+            I&apos;m <span className=" text-pink-500">{personalData.name}</span>, I&apos;m a <span className=" text-[#16f2b3]">{personalData.designation}</span>.
           </h1>
 
           <div className="my-12 flex items-center gap-5">
@@ -172,17 +168,17 @@ function HeroSection() {
               <div>
                 <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
                 <span className="mr-2 text-white">hardWorker</span>
-                <span className="text-amber-300">&amp;&amp;</span>
+                <span className="text-amber-300">&&</span>
               </div>
               <div>
                 <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
                 <span className="mr-2 text-white">problemSolver</span>
-                <span className="text-amber-300">&amp;&amp;</span>
+                <span className="text-amber-300">&&</span>
               </div>
               <div>
                 <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
                 <span className="mr-2 text-white">skills.length</span>
-                <span className="mr-2 text-amber-300">&gt;=</span>
+                <span className="mr-2 text-amber-300">{">="}</span>
                 <span className="text-orange-400">5</span>
               </div>
               <div><span className="ml-8 lg:ml-16 mr-2 text-gray-400">{`);`}</span></div>
