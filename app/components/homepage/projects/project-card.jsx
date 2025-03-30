@@ -1,6 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
+import Image from 'next/image';
 import { MdHeight } from 'react-icons/md';
 
 function ProjectCard({ project }) {
@@ -21,9 +22,11 @@ function ProjectCard({ project }) {
         </p>
       </div>
       <div className="border-t-[2px] border-indigo-900">
-        <img 
+        <Image 
           src={project.imageUrl} 
           alt={project.name}
+          width={800}
+          height={320}
           className="w-full h-80 object-cover"
         />
       </div>
