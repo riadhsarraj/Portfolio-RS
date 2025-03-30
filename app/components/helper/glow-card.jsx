@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const GlowCard = ({ children , identifier}) => {
+const GlowCard = ({ children, identifier }) => {
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
+    setIsClient(true);
+    
+    if (typeof window === 'undefined') return;
+
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
 
@@ -17,14 +23,16 @@ const GlowCard = ({ children , identifier}) => {
     };
 
     const UPDATE = (event) => {
+      if (!event) return;
+      
       for (const CARD of CARDS) {
         const CARD_BOUNDS = CARD.getBoundingClientRect();
 
         if (
-          event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
-          event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
-          event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
-          event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
+          event.x > CARD_BOUNDS.left - CONFIG.proximity &&
+          event.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
+          event.y > CARD_BOUNDS.top - CONFIG.proximity &&
+          event.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
         ) {
           CARD.style.setProperty('--active', 1);
         } else {
@@ -37,7 +45,7 @@ const GlowCard = ({ children , identifier}) => {
         ];
 
         let ANGLE =
-          (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
+          (Math.atan2(event.y - CARD_CENTER[1], event.x - CARD_CENTER[0]) *
             180) /
           Math.PI;
 
@@ -47,26 +55,36 @@ const GlowCard = ({ children , identifier}) => {
       }
     };
 
-    document.body.addEventListener('pointermove', UPDATE);
-
     const RESTYLE = () => {
-      CONTAINER.style.setProperty('--gap', CONFIG.gap);
-      CONTAINER.style.setProperty('--blur', CONFIG.blur);
-      CONTAINER.style.setProperty('--spread', CONFIG.spread);
-      CONTAINER.style.setProperty(
+      CONTAINER?.style.setProperty('--gap', CONFIG.gap);
+      CONTAINER?.style.setProperty('--blur', CONFIG.blur);
+      CONTAINER?.style.setProperty('--spread', CONFIG.spread);
+      CONTAINER?.style.setProperty(
         '--direction',
         CONFIG.vertical ? 'column' : 'row'
       );
     };
 
-    RESTYLE();
-    UPDATE();
+    if (CARDS.length > 0) {
+      document.body.addEventListener('pointermove', UPDATE);
+      RESTYLE();
+      UPDATE({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+    }
 
-    // Cleanup event listener
     return () => {
       document.body.removeEventListener('pointermove', UPDATE);
     };
   }, [identifier]);
+
+  if (!isClient) {
+    return (
+      <div className={`glow-container-${identifier} glow-container`}>
+        <article className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#2a2e5a] bg-[#101123] text-gray-200 rounded-xl w-full`}>
+          {children}
+        </article>
+      </div>
+    );
+  }
 
   return (
     <div className={`glow-container-${identifier} glow-container`}>
