@@ -1,5 +1,5 @@
 // @flow strict
-
+"use client";
 import * as React from 'react';
 import Image from 'next/image';
 import { MdHeight } from 'react-icons/md';
