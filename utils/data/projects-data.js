@@ -23,8 +23,8 @@ export const projectsData = [
     {
         id: 3,
         name: 'coworking space app',
-        description: 'Design and development of a camping and hiking  website "Fnart"." is a camping and hiking website  developed using the MERN stack.',
-        tools: ['React', 'Tailwind CSS', "Node JS", "Express JS", "MongoDB", "Git"],
+        description: 'App Coworking is a web application designed to present and manage a coworking space. It provides users with an intuitive interface to explore available workspaces, view details and services, and contact or book spaces easily. The platform is built to be responsive, user-friendly, and scalable, making it suitable for freelancers, startups, and remote teams looking for flexible work environments.',
+        tools: ['Next JS', 'Tailwind CSS',  "Git"],
         role: 'Full Stack Developer',
         code: '',
         demo: '',
