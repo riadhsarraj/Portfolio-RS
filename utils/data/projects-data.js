@@ -7,7 +7,7 @@ export const projectsData = [
         role: 'Full Stack Developer',
         code: '',
         demo: '',
-        imageUrl: '/dash.png'
+        imageUrl: '/Esim.png'
         
     },
     {
@@ -22,6 +22,16 @@ export const projectsData = [
     },
     {
         id: 3,
+        name: 'coworking space app',
+        description: 'Design and development of a camping and hiking  website "Fnart"." is a camping and hiking website  developed using the MERN stack.',
+        tools: ['React', 'Tailwind CSS', "Node JS", "Express JS", "MongoDB", "Git"],
+        role: 'Full Stack Developer',
+        code: '',
+        demo: '',
+        imageUrl: '/cowroking1.jpeg'
+    },
+    {
+        id: 4,
         name: 'Portfolio',
         description: 'I built a portfolio website using React, NextJS, and TailwindCSS, showcasing my skills and projects with a modern, responsive design.',
         tools: ['React', 'Tailwind CSS','Docker','Next JS','Git'],

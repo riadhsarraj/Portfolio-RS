@@ -8,6 +8,8 @@ export const skillsData = [
   'MongoDB',
   'MySQL',
   'Git',
+  'Next JS',  
+  'Angular',
   'Bootstrap',
   'Figma',
   'Firebase',

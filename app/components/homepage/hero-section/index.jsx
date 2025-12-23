@@ -124,9 +124,15 @@ function HeroSection() {
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Express JS</span>
                 <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">Next JS</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">Nest JS</span>
+                <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">MongoDB</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">React Native</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">Angular</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Flutter</span>
                 <span className="text-gray-400">{"', '"}</span>

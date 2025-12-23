@@ -3,11 +3,11 @@ export const educations = [
     id: 1,
     title: "Software engineering student",
     duration: "09/2022 – 07/2025",
-    institution: "EPI Sousse",
+    institution: " Sousse International Multidisciplinary School",
   },
   {
     id: 2,
-    title: "License in electrical engineering",
+    title: "BACHELOR'S DEGRE IN ELECTRICAL ENGINEERING",
     duration: "09/2018 – 06/2022",
     institution: "ISET Sousse",
   },
